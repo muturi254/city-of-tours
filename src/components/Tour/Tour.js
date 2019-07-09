@@ -5,18 +5,26 @@ import './Tour.scss';
 
 class Tour extends React.Component {
     render() {
+        const {tour} = this.props;
+        const { city, img, name, info }  = tour;
+
         return (
             <article className="tour">
-                <div className="img-countainer">
-                    <img src="https://images.pexels.com/photos/1405773/pexels-photo-1405773.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="tour"/>
+                <div className="img-container">
+                    <img src={img} alt="tour"/>
                     <span className="close-btn">
                         <FontAwesomeIcon icon="window-close" />
                     </span>
                 </div>
                 <div className="tour-info">
-                    <h3>city</h3>
-                    <h4>name</h4>
-                    <h5>Info <FontAwesomeIcon icon="caret-square-down" /></h5>
+                    <h3>{city}</h3>
+                    <h4>{name}</h4>
+                    <h5>Info {""}
+                        <span>
+                            <FontAwesomeIcon icon="caret-square-down" /> 
+                        </span>
+                    </h5>
+                    <p>{info}.</p>
                 </div>
             </article>
         );
