@@ -4,6 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Tour.scss';
 
 class Tour extends React.Component {
+
+    state = {
+        showInfo: false,
+    }
+
+    // handle click of info caret /icon
+    handleInfo = () =>{
+        this.setState({
+            showInfo: !this.state.showInfo
+        })
+    }
+
     render() {
         const {tour} = this.props;
         const { city, img, name, info }  = tour;
@@ -20,11 +32,11 @@ class Tour extends React.Component {
                     <h3>{city}</h3>
                     <h4>{name}</h4>
                     <h5>Info {""}
-                        <span>
+                        <span onClick={this.handleInfo}>
                             <FontAwesomeIcon icon="caret-square-down" /> 
                         </span>
                     </h5>
-                    <p>{info}.</p>
+                    {this.state.showInfo && <p>{info}.</p>}
                 </div>
             </article>
         );
