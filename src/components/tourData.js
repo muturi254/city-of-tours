@@ -38,4 +38,3 @@ export const tourData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,repellendus!"
   }
 ];
-console.log()
