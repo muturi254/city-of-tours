@@ -17,14 +17,14 @@ class Tour extends React.Component {
     }
 
     render() {
-        const {tour} = this.props;
-        const { city, img, name, info }  = tour;
+        const { id, city, img, name, info }  = this.props.tour;
+        const { removeTour } = this.props;
 
         return (
             <article className="tour">
                 <div className="img-container">
                     <img src={img} alt="tour"/>
-                    <span className="close-btn">
+                    <span className="close-btn" onClick={() => { removeTour(id)}}>
                         <FontAwesomeIcon icon="window-close" />
                     </span>
                 </div>
